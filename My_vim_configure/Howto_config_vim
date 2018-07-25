@@ -1,0 +1,8 @@
+2 plugins is important:Vundle and Youcompleteme.
+First, make sure you have a vim newer than 7.4.1578(ubuntu 16.04 is enough);
+
+Second, git clone ... to install Vundle;write .vimrc as vundle manual said(copy my .vimrc);PluginInstall all of them(including ycm);
+
+Then, we should compile ycm as ycm guide, Note than there is many ways to install ycm, if you are using CentOS you may reference Full Installation Guide, if you are using Ubuntu you will be very easy to compile as ycm installation guide said; 
+
+Finally, when you installed ycm, you should point out the compilation FLAG. It's easy,just as guide said, create a .ycm_extra_conf.py and the content is as example "def FlagsForFile......".
