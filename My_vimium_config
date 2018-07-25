@@ -1,0 +1,13 @@
+# Insert your preferred key mappings here.
+unmap ^
+unmap m
+unmap H
+unmap L
+map e scrollPageUp
+map a goBack
+map s goForward
+map z visitPreviousTab
+map q previousTab
+map w nextTab
+map c scrollDown
+map m toggleMuteTab
