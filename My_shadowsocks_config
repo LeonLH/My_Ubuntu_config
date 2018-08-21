@@ -8,6 +8,8 @@ Port:1080
 Password:leonlh
 
 chrome in linux configurationg is as following:
+Install switchyomega extensions(.crx file) and drag it into chrome extensions;
+Then configure switchyomega:
 Protocal: SOCKS5
 IP address,DNS name,server name:127.0.0.1
 Port:1080
