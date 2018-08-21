@@ -7,6 +7,11 @@ IP address,DNS name,server name:127.0.0.1
 Port:1080
 Password:leonlh
 
+chrome in linux configurationg is as following:
+Protocal: SOCKS5
+IP address,DNS name,server name:127.0.0.1
+Port:1080
+
 shadowsocks configure:
 {
 "server":"13.231.182.125",
