@@ -1,7 +1,29 @@
-""""""""""""""""""""""""""""""""""""VIMRC""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""VIMRC"""""""""""""""""""""""""""""""""
+
+
+iabbrev @@ 	laohan1221@126.com 
+iabbrev ccopy Copyright 2018 Leon Cheng, all rights reserved.
 set tabstop=4
 set shiftwidth=4	"每一级缩进4"
+set shortmess+=c	"To solve the problem "user difined completion"	
 
+set nu 
+set ic
+noremap <F2> = :r !date <CR>
+autocmd FileType cpp nnoremap <buffer> <F7> :w<Bar>!g++ -g % -o %:r.out -std=c++11<CR><CR>
+autocmd FileType cpp nnoremap <buffer> <F8> :w<Bar>!g++ -g % -o %:r.out -std=c++11 && ./%:r.out<CR>
+"autocmd FileType cpp nnoremap <buffer> <F5> :w<Bar>!g++ -g % -o %:r -std=c++11<CR>
+" Head of Shell script
+autocmd bufnewfile *.sh 0r /home/leon/.vim/sh_header.temp
+
+" Make space more useful
+"nnoremap <space> za
+inoremap <c-d> <esc>ddO
+let mapleader = ","
+"let maplocalleader = "\\"
+nnoremap <leader>ev :tabnew $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <c-e> <c-u>
 """"""""""""""""""""""""""""""""""""Plugins""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off 
@@ -13,6 +35,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'   " 这个插件可以显示文件的Git增删状态
 Plugin 'jiangmiao/auto-pairs' 
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/ListToggle'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -52,13 +75,37 @@ let g:ycm_collect_identifiers_from_comments_and_strings=0
 let g:ycm_server_python_interpreter='/usr/bin/python'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_seed_identifiers_with_syntax=1    " 语法关键字补全
+let g:ycm_always_populate_location_list = 1		"location list"
 "let g:ycm_confirm_extra_conf=0  " 打开vim时不再询问是否加载ycm_extra_conf.py配置
 let g:ycm_key_invoke_completion = '<C-a>' " ctrl + a 触发补全
 set completeopt=longest,menu    "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)"
 
-
-
-""""""""""""""""""""""""""powerline""""""""""""""""""""""""""""""""""
+"let diagnostics do not show the unused variable information
+let g:ycm_filter_diagnostics = {
+  \ "cpp": {
+  \      "regex": [ "unused variable *", "unused parameter *" ],
+  \      "level": "warning",
+  \    }
+  \ }
+"let ycm disabled in specified filetype, the value is unimportant, if you want remove a option, just delete the line; 
+"\ 'markdown':1,
+let g:ycm_filetype_blacklist={ 
+	\ 'qf' : 1,
+	\ 'notes' : 1, 
+	\ 'tagbar' : 1,
+	\ 'unite' : 1,
+	\ 'text' : 1,
+	\ 'vimwiki' : 1,
+	\ 'pandoc' : 1,
+	\ 'infolog' : 1,
+	\ 'mail' : 1
+	\}
+let g:ycm_show_diagnostics_ui = 1				"
+let g:ycm_enable_diagnostic_signs = 1			"diagnostics sign on
+let g:ycm_enable_diagnostic_highlighting = 0	"hightlighting off
+let g:ycm_warning_symbol = '>'
+let g:ycm_error_symbol = '>>'
+"""""""""""""""""""""""""rpowerline""""""""""""""""""""""""""""""""""
 set guifont=Inconsolata\ for\ Powerline:h15
 let g:Powerline_symbols = 'fancy'
 set encoding=utf-8
