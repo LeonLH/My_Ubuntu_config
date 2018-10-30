@@ -13,6 +13,11 @@ noremap <F2> = :r !date <CR>
 autocmd FileType cpp nnoremap <buffer> <F7> :w<Bar>!g++ -g % -o %:r.out -std=c++11<CR><CR>
 autocmd FileType cpp nnoremap <buffer> <F8> :w<Bar>!g++ -g % -o %:r.out -std=c++11 && ./%:r.out<CR>
 "autocmd FileType cpp nnoremap <buffer> <F5> :w<Bar>!g++ -g % -o %:r -std=c++11<CR>
+
+" Make F9 to fixit by ycm diagnostic
+autocmd filetype cpp nnoremap <buffer> <F9> :YcmCompleter FixIt<CR>
+
+
 " Head of Shell script
 autocmd bufnewfile *.sh 0r /home/leon/.vim/sh_header.temp
 
