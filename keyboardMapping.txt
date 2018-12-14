@@ -1,0 +1,4 @@
+1. Switch 'CapsLock' <---> 'Ctrl' 
+2. Ubuntu workspace
+	* Switch to Workspace left/right/above/below					--->	'Alt+left/right/above/below'
+	* Move Window One Workspace to the left/right/above/below 		---> 	'Alt+Shift+ left/right/above/below'

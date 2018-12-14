@@ -9,9 +9,10 @@ set shortmess+=c	"To solve the problem "user difined completion"
 
 set nu 
 set ic
-noremap <F2> = :r !date <CR>
-autocmd FileType cpp nnoremap <buffer> <F7> :w<Bar>!g++ -g % -o %:r.out -std=c++11<CR><CR>
-autocmd FileType cpp nnoremap <buffer> <F8> :w<Bar>!g++ -g % -o %:r.out -std=c++11 && ./%:r.out<CR>
+noremap <F2> = :r !date <CR> I### <esc>o<CR>
+noremap <F2> = :r !date <CR> I### <esc> z<CR> o<CR>
+autocmd FileType cpp nnoremap <buffer> <F7> :w<Bar>!g++ -g % -o %:r.out -std=c++14<CR><CR>
+autocmd FileType cpp nnoremap <buffer> <F8> :w<Bar>!g++ -g % -o %:r.out -std=c++14 && ./%:r.out<CR>
 "autocmd FileType cpp nnoremap <buffer> <F5> :w<Bar>!g++ -g % -o %:r -std=c++11<CR>
 
 " Make F9 to fixit by ycm diagnostic
@@ -29,7 +30,7 @@ let mapleader = ","
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <c-e> <c-u>
-""""""""""""""""""""""""""""""""""""Plugins""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""" Vundle """"""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -42,9 +43,19 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Valloric/ListToggle'
 
+Plugin 'JamshedVesuna/vim-markdown-preview'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 syntax on
+
+"""""""""""""""""""""""""""""" vim-plug """"""""""""""""""""""""""""""
+call plug#begin('~/.vim/plugged')
+
+" Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'iamcco/markdown-preview.vim'
+
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""Nerdtree""""""""""""""""""""""""""""""""""
 " Ctrl+N 打开/关闭
@@ -63,6 +74,11 @@ let NERDTreeMinimalUI=1
 """"""""""""""""""""""""""""""YouCompleteMe""""""""""""""""""""""""""""""""""""""""
 
 let g:ycm_confirm_extra_conf=0  
+
+" To make youcompleteme support c++14
+" let g:syntastic_cpp_checkers = ['gcc']
+" let g:syntastic_cpp_checkers = 'gcc'
+" let g:syntastic_cpp_compliler_options = '-std=c++14'
 
 
 let g:ycm_key_list_previous_completion=['<Down>']  
@@ -118,3 +134,7 @@ set t_Co=256
 set fillchars+=stl:\ ,stlnc:\
 set term=xterm-256color
 set termencoding=utf-8
+
+""""""""""""""""""""""""" Markdown Preview """"""""""""""""""""""""""
+let g:mkdp_path_to_chrome = "open -a Google\\ Chrome"
+

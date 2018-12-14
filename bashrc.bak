@@ -130,5 +130,9 @@ MYIP=$(myip)
 export LESS="-L"
 
 # Make cursor blink on/off
-alias set-cursor-blink-on="gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default|tr -d \')/ cursor-blink-mode on"
-alias set-cursor-blink-off="gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default|tr -d \')/ cursor-blink-mode off"
+# Usage: cursor-blink on|off
+alias cursor-blink="gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default|tr -d \')/ cursor-blink-mode "
+
+# Make an alias for shadowsocks
+# Usage: shadowsocks start|stop|restart
+alias shadowsocks="sudo /home/leon/.local/bin/sslocal -c /etc/shadowsocks.json -d "
