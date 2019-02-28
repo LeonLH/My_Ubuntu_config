@@ -1,0 +1,17 @@
+{
+	"server":"0.0.0.0",
+	"server_port":8388,
+	"server_password":{
+		"8388":"leonlh",
+		"8387":"leonlh",
+		"8386":"leonlh"
+	},
+	"local_address":"127.0.0.1",
+	"loacal_port":1080,
+	"password":"leonlh",
+	"timeout":300,
+	"method":"aes-256-cfb",
+	"fast_open":false,
+	"workers":1,
+	"prefer_ipv6":false
+}

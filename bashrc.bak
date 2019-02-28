@@ -135,4 +135,9 @@ alias cursor-blink="gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/t
 
 # Make an alias for shadowsocks
 # Usage: shadowsocks start|stop|restart
-alias shadowsocks="sudo /home/leon/.local/bin/sslocal -c /etc/shadowsocks.json -d "
+alias shadowsocks="sudo /home/leon/.local/bin/sslocal -c /etc/shadowsocks/client.json -d "
+
+# Turn off the screen 
+# Usage: turn-off-screen
+alias turn-off-screen="xset dpms force off"
+
