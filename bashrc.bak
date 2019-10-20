@@ -126,8 +126,10 @@ export NVM_DIR="$HOME/.nvm"
 alias myip="ifconfig wlp9s0| grep ' inet '|sed 's/.*inet addr://g' | sed 's/  Bcast.*$//g'"
 MYIP=$(myip)
 
-# Make less --no-lessopen option works
-export LESS="-L"
+# Make less -L is --no-lessopen option works
+# -R allow ANSI escape sequence to pass through unscathed
+# eFRX is color 
+export LESS="-LeFRX"
 
 # Make cursor blink on/off
 # Usage: cursor-blink on|off
@@ -141,3 +143,4 @@ alias shadowsocks="sudo /home/leon/.local/bin/sslocal -c /etc/shadowsocks/client
 # Usage: turn-off-screen
 alias turn-off-screen="xset dpms force off"
 
+# /usr/bin/setxkbmap -option

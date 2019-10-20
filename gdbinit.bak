@@ -696,3 +696,7 @@ set prompt >>
 
 set follow-fork-mode child
 set detach-on-fork off
+
+# To solve inferior exited when using the system() call in C++ program
+# set startup-with-shell off
+# It doesn't work
