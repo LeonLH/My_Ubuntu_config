@@ -14,4 +14,3 @@ Host daniel
     Port 22
     User git
     IdentityFile ~/.ssh/leon
-
