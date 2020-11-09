@@ -1,17 +1,43 @@
+Host 12.12
+    HostName 172.21.12.12
+    Port 22
+    User root
+    IdentityFile ~/.ssh/id_rsa
+
+Host 2.58
+    HostName 192.168.2.58
+    Port 22
+    User root
+    IdentityFile ~/.ssh/id_rsa
+
+Host 1.185
+    HostName 192.168.1.185
+    Port 22
+    User root
+    IdentityFile ~/.ssh/id_rsa
+
 Host 1.179
     HostName 192.168.1.179
     Port 22
     User root
     IdentityFile ~/.ssh/id_rsa
-Host 2.57
-    HostName 192.168.2.57
+
+Host 4.177
+    HostName 172.30.4.177
     Port 22
     User root
     IdentityFile ~/.ssh/id_rsa
 
-Host daniel
-    HostName github.com
+Host 169
+    HostName 172.30.4.169
     Port 22
-    User git
-    IdentityFile ~/.ssh/leon
+    User root
+    IdentityFile ~/.ssh/id_rsa
+
+Host 235
+    HostName 210.14.156.235
+    Port 43322
+    User root
+    IdentityFile ~/.ssh/id_rsa
+
 
